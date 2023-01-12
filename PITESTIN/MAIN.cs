@@ -66,15 +66,17 @@ namespace piapprox
         }
         public static int[] BaileyMethod(int n)
         {
-            const int precision = 1000;
-            BigDecimal result = new BigDecimal(0, 0, precision);
+            const int precision = 100;
+            BigDecimal Power3 = (new BigDecimal(4, 0, precision) / (1)) - (new BigDecimal(2, 0, precision) / (4)) - (new BigDecimal(1, 0, precision) / (5)) - (new BigDecimal(1, 0, precision) / (6));
             int[] results = new int[n];
 
-            BigDecimal sixteeninverted = new BigDecimal(1,0,precision)/16;
-            for (int i = 0; i < n; i++)
+            results[0] = comparetotext(Power3.toString(), PI);
+
+            BigDecimal sixteeninverted = new BigDecimal(1,0,precision) / 16;
+            for (int i = 1; i < n; i++)
             {
-                result += sixteeninverted * (new BigDecimal(4, 0, precision) / (8 * i + 1)) - (new BigDecimal(2, 0, precision) / (8 * i + 4)) - (new BigDecimal(1, 0, precision) / (8 * i + 5)) - (new BigDecimal(1, 0, precision) / (8 * i + 6));
-                results[i - 1] = comparetotext(result.toString(), PI);
+                Power3 += sixteeninverted * (new BigDecimal(4, 0, precision) / (8 * i + 1)) - (new BigDecimal(2, 0, precision) / (8 * i + 4)) - (new BigDecimal(1, 0, precision) / (8 * i + 5)) - (new BigDecimal(1, 0, precision) / (8 * i + 6));
+                results[i] = comparetotext(Power3.toString(), PI);
                 sixteeninverted /= 16;
                 
             }

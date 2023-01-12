@@ -19,8 +19,8 @@ namespace PITESTIN
             InitializeComponent();
             PITOOLS.Init();
             chart1.Titles.Add("DATA");
-            const int Iterations = 10;
-            int[] LeibnizResult = PITOOLS.LeibnizMethod(Iterations);
+            const int Iterations = 1000;
+            /*int[] LeibnizResult = PITOOLS.LeibnizMethod(Iterations);
             chart1.Series["Leibniz"].Points.AddXY(1, LeibnizResult[0]);
             for (int i = 1; i < LeibnizResult.Length; i++)
             {
@@ -40,12 +40,12 @@ namespace PITESTIN
                     continue;
                 }
                 chart1.Series["Madhava"].Points.AddXY(i + 1, MadhavaResult[i]);
-            }
+            }*/
             int[] BaileyResult = PITOOLS.BaileyMethod(Iterations);
             chart1.Series["Bailey"].Points.AddXY(1, BaileyResult[0]);
             for (int i = 1; i < BaileyResult.Length; i++)
             {
-                if ((i + 1) % 5 != 0)
+                if ((i + 1) % 1 != 0)
                 {
                     continue;
                 }
