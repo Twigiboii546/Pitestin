@@ -1,0 +1,10 @@
+C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\bin\Release\PITESTIN.exe.config
+C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\bin\Release\PITESTIN.exe
+C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\bin\Release\PITESTIN.pdb
+C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\obj\Release\PITESTIN.Form1.resources
+C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\obj\Release\PITESTIN.Properties.Resources.resources
+C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\obj\Release\PITESTIN.csproj.GenerateResource.cache
+C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\obj\Release\PITESTIN.csproj.CoreCompileInputs.cache
+C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\obj\Release\PITESTIN.exe
+C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\obj\Release\PITESTIN.pdb
+C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\obj\Release\PITESTIN.csproj.AssemblyReference.cache
