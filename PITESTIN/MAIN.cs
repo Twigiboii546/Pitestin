@@ -66,24 +66,38 @@ namespace piapprox
         }
         public static int[] BaileyMethod(int n)
         {
-            const int precision = 100;
-            BigDecimal Power3 = (new BigDecimal(4, 0, precision) / (1)) - (new BigDecimal(2, 0, precision) / (4)) - (new BigDecimal(1, 0, precision) / (5)) - (new BigDecimal(1, 0, precision) / (6));
+            const int precision = 1500;
+            BigDecimal result = new BigDecimal(33,-1,precision) - new BigDecimal(1,0,precision)/ 6;
             int[] results = new int[n];
-
-            results[0] = comparetotext(Power3.toString(), PI);
-
-            BigDecimal sixteeninverted = new BigDecimal(1,0,precision) / 16;
+            results[0] = comparetotext(result.toString(), PI);
+            BigDecimal sixteen = new BigDecimal(1, 0, precision) / 16;
             for (int i = 1; i < n; i++)
             {
-                Power3 += sixteeninverted * (new BigDecimal(4, 0, precision) / (8 * i + 1)) - (new BigDecimal(2, 0, precision) / (8 * i + 4)) - (new BigDecimal(1, 0, precision) / (8 * i + 5)) - (new BigDecimal(1, 0, precision) / (8 * i + 6));
-                results[i] = comparetotext(Power3.toString(), PI);
-                sixteeninverted /= 16;
-                
+                result += sixteen * (new BigDecimal(4, 0, precision) / (8 * i + 1) - new BigDecimal(2, 0, precision) / (8 * i + 4) - new BigDecimal(1, 0, precision) / (8 * i + 5) - new BigDecimal(1, 0, precision) / (8 * i + 6));
+                sixteen /= 16;
+                results[i] = comparetotext(result.toString(), PI);
             }
             return results;
-
-
-
+        }
+        public static BigDecimal BD(int x, int precision)
+        {
+            return new BigDecimal(x, 0, precision);
+        }
+        public static int[] BellardMethod(int n)
+        {
+            const int precision = 330;
+            BigDecimal onedivsixfour = new BigDecimal(15625,-6,precision);
+            BigDecimal result = new BigDecimal(0, 0, precision);
+            BigDecimal onedivtusentjugofyra = new BigDecimal(1, 0, precision);
+            int[] results = new int[n];
+            
+            for (int i = 0; i < n; i++)
+            {
+                result += (i % 2 == 0 ? 1 : -1) * onedivtusentjugofyra * (-BD(32, precision) / (4 * i + 1) - BD(1, precision) / (4*i + 3) + BD(256, precision)/(10*i+1)-BD(64,precision)/(10*i+3)-BD(4,precision)/(10*i+5)-BD(4,precision)/(10*i+7)+BD(1,precision)/(10*i+9));
+                onedivtusentjugofyra /= 1024;
+                results[i] = comparetotext((result * onedivsixfour).toString(), PI);
+            }
+            return results;
         }
 
 

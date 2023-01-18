@@ -12,7 +12,7 @@ namespace Bigdecimal
         BigInteger Mantissa;
         public BigDecimal(BigInteger mantissa, int power, int precision)
         {
-            while (mantissa % 10 == 0)
+            while (mantissa % 10 == 0 && mantissa !=0)
             {
                 mantissa /= 10;
                 power++;
