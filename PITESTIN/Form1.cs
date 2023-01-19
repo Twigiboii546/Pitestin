@@ -13,7 +13,7 @@ namespace PITESTIN
         {
             InitializeComponent();
             PITOOLS.Init();
-            const int Iterations = 100;
+            const int Iterations = 1000;
             (string, Func<int, int[]>)[] MethodFunctions = new (string, Func<int, int[]>)[]
             {
                 ("Leibniz", PITOOLS.LeibnizMethod),

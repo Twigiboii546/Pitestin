@@ -8,3 +8,14 @@ C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\obj\Release\PITESTIN.csproj.Core
 C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\obj\Release\PITESTIN.exe
 C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\obj\Release\PITESTIN.pdb
 C:\Users\egabkvi\source\repos\PITESTIN\PITESTIN\obj\Release\PITESTIN.csproj.AssemblyReference.cache
+C:\Pitestin\PITESTIN\bin\Release\PITESTIN.exe.config
+C:\Pitestin\PITESTIN\bin\Release\PITESTIN.exe
+C:\Pitestin\PITESTIN\bin\Release\PITESTIN.pdb
+C:\Pitestin\PITESTIN\obj\Release\PITESTIN.csproj.AssemblyReference.cache
+C:\Pitestin\PITESTIN\obj\Release\PITESTIN.csproj.SuggestedBindingRedirects.cache
+C:\Pitestin\PITESTIN\obj\Release\PITESTIN.Form1.resources
+C:\Pitestin\PITESTIN\obj\Release\PITESTIN.Properties.Resources.resources
+C:\Pitestin\PITESTIN\obj\Release\PITESTIN.csproj.GenerateResource.cache
+C:\Pitestin\PITESTIN\obj\Release\PITESTIN.csproj.CoreCompileInputs.cache
+C:\Pitestin\PITESTIN\obj\Release\PITESTIN.exe
+C:\Pitestin\PITESTIN\obj\Release\PITESTIN.pdb
