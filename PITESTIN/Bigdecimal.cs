@@ -123,7 +123,5 @@ namespace Bigdecimal
         {
             return new BigDecimal(BigInteger.Pow(a.Mantissa, b), a.Power * b, a.precision);
         }
-
     }
-
 }

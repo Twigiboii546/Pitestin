@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using piapprox;
 using Bigdecimal;
+using System.Diagnostics;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PITESTIN
 {
@@ -18,68 +20,38 @@ namespace PITESTIN
         {
             InitializeComponent();
             PITOOLS.Init();
-            chart1.Titles.Add("DATA");
-            const int Iterations = 10;
-            const int Methods = 4;
-            int[][] MethodsResults = new int[Methods][];
-            Func<int, int[]>[] MethodFunctions = new Func<int, int[]>[]
+            const int Iterations = 100;
+            (string, Func<int, int[]>)[] MethodFunctions = new (string, Func<int, int[]>)[]
             {
-                PITOOLS.LeibnizMethod,
-                PITOOLS.MadhavaMethod,
-                PITOOLS.BaileyMethod,
-                PITOOLS.BellardMethod
+                ("Leibniz", PITOOLS.LeibnizMethod),
+                ("Madhava", PITOOLS.MadhavaMethod),
+                ("Bailey", PITOOLS.BaileyMethod),
+                ("Bellard", PITOOLS.BellardMethod)
             };
+            int Methods = MethodFunctions.Length;
+            (int[], float)[] MethodsResults = new (int[], float)[Methods];
 
             Parallel.For(0, Methods, i =>
             {
-                MethodsResults[i] = MethodFunctions[i](Iterations);
+                Stopwatch st = Stopwatch.StartNew();
+                int[] res = MethodFunctions[i].Item2(Iterations);
+                st.Stop();
+                MethodsResults[i] = (res, st.ElapsedMilliseconds);
             });
-
-            int[] LeibnizResult = MethodsResults[0];
-            chart1.Series["Leibniz"].Points.AddXY(1, LeibnizResult[0]);
-            for (int i = 1; i < LeibnizResult.Length; i++)
+            for (int i = 0; i < Methods; i++)
             {
-                if ((i + 1) % 1 != 0)
+                Series series = new Series(MethodFunctions[i].Item1);
+                series.ChartType = SeriesChartType.Line;
+                int[] results = MethodsResults[i].Item1;
+                series.LegendText = $"{MethodFunctions[i].Item1}: {results[results.Length - 1]} correct in {MethodsResults[i].Item2} ms";
+                for (int j = 0; j < results.Length; j++)
                 {
-                    continue;
+                    series.Points.AddXY(j + 1, results[j]);
                 }
-                chart1.Series["Leibniz"].Points.AddXY(i + 1, LeibnizResult[i]);
-            }
-
-            int[] MadhavaResult = MethodsResults[1];
-            chart1.Series["Madhava"].Points.AddXY(1, MadhavaResult[0]);
-            for (int i = 1; i < MadhavaResult.Length; i++)
-            {
-                if ((i + 1) % 5 != 0)
-                {
-                    continue;
-                }
-                chart1.Series["Madhava"].Points.AddXY(i + 1, MadhavaResult[i]);
-            }
-            int[] BaileyResult = MethodsResults[2];
-            chart1.Series["Bailey"].Points.AddXY(1, BaileyResult[0]);
-            for (int i = 1; i < BaileyResult.Length; i++)
-            {
-                if ((i + 1) % 1 != 0)
-                {
-                    continue;
-                }
-                chart1.Series["Bailey"].Points.AddXY(i + 1, BaileyResult[i]);
-            }
-            int[] BellardResult = MethodsResults[3];
-            chart1.Series["Bellard"].Points.AddXY(1, BellardResult[0]);
-            for (int i = 1; i < BellardResult.Length; i++)
-            {
-                if ((i + 1) % 1 != 0)
-                {
-                    continue;
-                }
-                chart1.Series["Bellard"].Points.AddXY(i + 1, BellardResult[i]);
+                chart1.Series.Add(series);
             }
         }
-
-
-private void chart1_Click(object sender, EventArgs e)
+        private void chart1_Click(object sender, EventArgs e)
         {
 
         }

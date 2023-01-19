@@ -11,19 +11,16 @@ namespace piapprox
         public static int comparetotext(string a, string b)
         {
             int correctdigits = 0;
-            
             while (true)
             {
                 if(correctdigits >= a.Length || correctdigits >= b.Length) return correctdigits;
                 if (a[correctdigits] != b[correctdigits]) return correctdigits;
                 correctdigits++;
             }
-
         }
         public static BigDecimal atanone(int n, int precision)
         {
             BigDecimal results = new BigDecimal(1, 0, precision);
-
             for (int i = 1; i <= n; i++)
             {
                 results += i % 2 == 0 ? (BigDecimal)1 / (2 * i + 1) : (BigDecimal)(-1) / (2 * i + 1);
@@ -85,7 +82,7 @@ namespace piapprox
         }
         public static int[] BellardMethod(int n)
         {
-            const int precision = 330;
+            const int precision = 3300;
             BigDecimal onedivsixfour = new BigDecimal(15625,-6,precision);
             BigDecimal result = new BigDecimal(0, 0, precision);
             BigDecimal onedivtusentjugofyra = new BigDecimal(1, 0, precision);
