@@ -1,6 +1,4 @@
-﻿using System;
-using Bigdecimal;
-using System.Threading.Tasks;
+﻿using Bigdecimal;
 
 namespace piapprox
 {
