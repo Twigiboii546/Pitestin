@@ -1,4 +1,6 @@
 ﻿using Bigdecimal;
+using System;
+using System.Security.Policy;
 
 namespace piapprox
 {
@@ -83,14 +85,66 @@ namespace piapprox
             }
             return results;
         }
+        public static int[] ChudnovskyMethod(int n)
+        {
+            int precision = chudconst.precision;
+            BigDecimal sixkfact = BD(1, precision); // (6k)!
+            BigDecimal AddTerm = BD(13591409, precision); // (13591409 + 545140134k)
+            BigDecimal threekfact = BD(1, precision); // (3k)!
+            BigDecimal kfactcubed = BD(1, precision); // (k!)^3
+            BigDecimal cubeterm = BD(1, precision); // -262537412640768000^k
+            BigDecimal cubemultiplier = -BigDecimal.Parse("262537412640768000");
+            BigDecimal result = AddTerm;
+            int[] results = new int[n];
+            results[0] = comparetotext((1 / result * chudconst).toString(), PI);
+            for (int k = 1; k < n; k++)
+            {
+                // Getting new value for 6kfact
+                BigDecimal sixk = BD(6 * k, precision);
+                for (int i = 0; i <= 5; i++)
+                {
+                    sixkfact *= sixk - i;
+                }
+                // Getting new value for AddTerm
+                AddTerm += 545140134;
+                // Getting new value for threekfact
+                BigDecimal threek = BD(3 * k, precision);
+                for (int i = 0; i <= 2; i++)
+                {
+                    threekfact *= threek - i;
+                }
+                //Getting new value for kfactcubed
+                kfactcubed *= BD(k, precision) * BD(k, precision) * BD(k, precision);
+                //Getting new value for cubeterm
+                cubeterm *= cubemultiplier;
+                //Getting new value for result 
+                result += sixkfact * AddTerm / (threekfact * kfactcubed * cubeterm);
+                // Appending value to array
+                results[k] = comparetotext((1 / result * chudconst).toString(), PI);
+                Console.WriteLine(sixkfact.toString());
+                Console.WriteLine(AddTerm.toString());
+                Console.WriteLine(threekfact.toString());
+                Console.WriteLine(kfactcubed.toString());
+                Console.WriteLine(cubeterm.toString());
+                Console.WriteLine(result.toString());
+                Console.WriteLine(chudconst.toString());
+                result.precision = 10;
+                Console.WriteLine((BD(1, precision) / result).toString());
+                Console.WriteLine((1 / result * chudconst).toString());
+                var x = 0;
+            }
+            return results;
+        }
 
         static string PI;
         public static BigDecimal sqrt12;
+        public static BigDecimal chudconst;
         
         public static void Init()
         {
             PI = System.IO.File.ReadAllText("./PI");
             sqrt12 = BigDecimal.Parse(System.IO.File.ReadAllText("./SQRT12"));
+            chudconst = BigDecimal.Parse(System.IO.File.ReadAllText("./ChudOuterConstant"));
         }
     }
 }

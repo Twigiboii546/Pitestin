@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Numerics;
 
 namespace Bigdecimal
 {
@@ -67,6 +68,8 @@ namespace Bigdecimal
                 newpower--;
                 digits++;
                 remainder %= b.Mantissa;
+                Console.WriteLine($"HIGH PRECISION: {highestprecision}, digits: {digits}");
+                Console.WriteLine($"Remainder: {remainder}");
             }
             return new BigDecimal(newMantissa, a.Power - b.Power + newpower, highestprecision);
         }

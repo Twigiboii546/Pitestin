@@ -13,13 +13,14 @@ namespace PITESTIN
         {
             InitializeComponent();
             PITOOLS.Init();
-            const int Iterations = 1000;
+            const int Iterations = 10;
             (string, Func<int, int[]>)[] MethodFunctions = new (string, Func<int, int[]>)[]
             {
-                ("Leibniz", PITOOLS.LeibnizMethod),
+                /*("Leibniz", PITOOLS.LeibnizMethod),
                 ("Madhava", PITOOLS.MadhavaMethod),
                 ("Bailey", PITOOLS.BaileyMethod),
-                ("Bellard", PITOOLS.BellardMethod)
+                ("Bellard", PITOOLS.BellardMethod),*/
+                ("Chudnovsky", PITOOLS.ChudnovskyMethod)
             };
             int Methods = MethodFunctions.Length;
             (int[], float)[] MethodsResults = new (int[], float)[Methods];
