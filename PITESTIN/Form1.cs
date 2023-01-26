@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using piapprox;
 using System.Diagnostics;
 using System.Windows.Forms.DataVisualization.Charting;
+using Bigdecimal;
 
 namespace PITESTIN
 {
@@ -13,15 +14,16 @@ namespace PITESTIN
         {
             InitializeComponent();
             PITOOLS.Init();
-            const int Iterations = 10;
+            const int Iterations = 100;
             (string, Func<int, int[]>)[] MethodFunctions = new (string, Func<int, int[]>)[]
             {
-                /*("Leibniz", PITOOLS.LeibnizMethod),
+                ("Leibniz", PITOOLS.LeibnizMethod),
                 ("Madhava", PITOOLS.MadhavaMethod),
                 ("Bailey", PITOOLS.BaileyMethod),
-                ("Bellard", PITOOLS.BellardMethod),*/
+                ("Bellard", PITOOLS.BellardMethod),
                 ("Chudnovsky", PITOOLS.ChudnovskyMethod)
             };
+
             int Methods = MethodFunctions.Length;
             (int[], float)[] MethodsResults = new (int[], float)[Methods];
 

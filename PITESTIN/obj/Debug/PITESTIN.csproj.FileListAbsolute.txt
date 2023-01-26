@@ -19,3 +19,14 @@ C:\Pitestin\PITESTIN\obj\Debug\PITESTIN.csproj.GenerateResource.cache
 C:\Pitestin\PITESTIN\obj\Debug\PITESTIN.csproj.CoreCompileInputs.cache
 C:\Pitestin\PITESTIN\obj\Debug\PITESTIN.exe
 C:\Pitestin\PITESTIN\obj\Debug\PITESTIN.pdb
+D:\VisualStudioProjects\Pitestin\PITESTIN\bin\Debug\PITESTIN.exe.config
+D:\VisualStudioProjects\Pitestin\PITESTIN\bin\Debug\PITESTIN.exe
+D:\VisualStudioProjects\Pitestin\PITESTIN\bin\Debug\PITESTIN.pdb
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Debug\PITESTIN.csproj.AssemblyReference.cache
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Debug\PITESTIN.csproj.SuggestedBindingRedirects.cache
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Debug\PITESTIN.Form1.resources
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Debug\PITESTIN.Properties.Resources.resources
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Debug\PITESTIN.csproj.GenerateResource.cache
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Debug\PITESTIN.csproj.CoreCompileInputs.cache
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Debug\PITESTIN.exe
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Debug\PITESTIN.pdb

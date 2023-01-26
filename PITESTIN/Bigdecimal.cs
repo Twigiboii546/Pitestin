@@ -59,17 +59,18 @@ namespace Bigdecimal
             BigInteger remainder = a.Mantissa % b.Mantissa;
             BigInteger newMantissa = BigInteger.Divide(a.Mantissa, b.Mantissa);
             int newpower = 0;
-            int digits = newMantissa.ToString().Length;
+            int digits = newMantissa.ToString().Length - 1;
             int highestprecision = a.precision >= b.precision ? a.precision : b.precision;
-            while (!(remainder == 0) && digits <= highestprecision)
+            while (remainder != 0 && digits <= highestprecision)
             {
                 remainder *= 10;
                 newMantissa = newMantissa * 10 + remainder / b.Mantissa;
                 newpower--;
-                digits++;
+                if (BigInteger.Abs(newMantissa) > 0)
+                {
+                    digits++;
+                }
                 remainder %= b.Mantissa;
-                Console.WriteLine($"HIGH PRECISION: {highestprecision}, digits: {digits}");
-                Console.WriteLine($"Remainder: {remainder}");
             }
             return new BigDecimal(newMantissa, a.Power - b.Power + newpower, highestprecision);
         }

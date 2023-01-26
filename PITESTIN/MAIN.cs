@@ -121,17 +121,6 @@ namespace piapprox
                 result += sixkfact * AddTerm / (threekfact * kfactcubed * cubeterm);
                 // Appending value to array
                 results[k] = comparetotext((1 / result * chudconst).toString(), PI);
-                Console.WriteLine(sixkfact.toString());
-                Console.WriteLine(AddTerm.toString());
-                Console.WriteLine(threekfact.toString());
-                Console.WriteLine(kfactcubed.toString());
-                Console.WriteLine(cubeterm.toString());
-                Console.WriteLine(result.toString());
-                Console.WriteLine(chudconst.toString());
-                result.precision = 10;
-                Console.WriteLine((BD(1, precision) / result).toString());
-                Console.WriteLine((1 / result * chudconst).toString());
-                var x = 0;
             }
             return results;
         }
