@@ -5,6 +5,7 @@ using piapprox;
 using System.Diagnostics;
 using System.Windows.Forms.DataVisualization.Charting;
 using Bigdecimal;
+using System.IO;
 
 namespace PITESTIN
 {
@@ -14,7 +15,7 @@ namespace PITESTIN
         {
             InitializeComponent();
             PITOOLS.Init();
-            const int Iterations = 100;
+            const int Iterations = 1000;
             (string, Func<int, int[]>)[] MethodFunctions = new (string, Func<int, int[]>)[]
             {
                 ("Leibniz", PITOOLS.LeibnizMethod),
@@ -46,10 +47,24 @@ namespace PITESTIN
                 }
                 chart1.Series.Add(series);
             }
+            for (int i = 0; i < Methods; i++)
+            {
+                File.WriteAllText("./" + MethodFunctions[i].Item1, intsToString(MethodsResults[i].Item1) + '\n' + MethodsResults[i].Item2 + "ms");
+            }
         }
+
+        string intsToString(int[] x)
+        {
+            string result = "";
+            for (int i = 0; i < x.Length; i++)
+            {
+                result += $"{x[i]}\n";
+            }
+            return result;
+        }
+
         private void chart1_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

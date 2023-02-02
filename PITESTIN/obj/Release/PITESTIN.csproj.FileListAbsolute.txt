@@ -19,3 +19,14 @@ C:\Pitestin\PITESTIN\obj\Release\PITESTIN.csproj.GenerateResource.cache
 C:\Pitestin\PITESTIN\obj\Release\PITESTIN.csproj.CoreCompileInputs.cache
 C:\Pitestin\PITESTIN\obj\Release\PITESTIN.exe
 C:\Pitestin\PITESTIN\obj\Release\PITESTIN.pdb
+D:\VisualStudioProjects\Pitestin\PITESTIN\bin\Release\PITESTIN.exe.config
+D:\VisualStudioProjects\Pitestin\PITESTIN\bin\Release\PITESTIN.exe
+D:\VisualStudioProjects\Pitestin\PITESTIN\bin\Release\PITESTIN.pdb
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Release\PITESTIN.csproj.AssemblyReference.cache
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Release\PITESTIN.csproj.SuggestedBindingRedirects.cache
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Release\PITESTIN.Form1.resources
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Release\PITESTIN.Properties.Resources.resources
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Release\PITESTIN.csproj.GenerateResource.cache
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Release\PITESTIN.csproj.CoreCompileInputs.cache
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Release\PITESTIN.exe
+D:\VisualStudioProjects\Pitestin\PITESTIN\obj\Release\PITESTIN.pdb

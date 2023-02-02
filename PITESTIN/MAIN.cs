@@ -106,6 +106,7 @@ namespace piapprox
                     sixkfact *= sixk - i;
                 }
                 // Getting new value for AddTerm
+                AddTerm.precision = precision;
                 AddTerm += 545140134;
                 // Getting new value for threekfact
                 BigDecimal threek = BD(3 * k, precision);
